@@ -154,7 +154,6 @@ app.post("/api/booking", protectRoute, async (req, res) => {
     console.log(userData);
     console.log(flightData)
     try {
-        // const data = { user: user._id, flight: flight_id };
         await bookingModule.create({user : userData , flight: flightData});
         res.status(201).send({ user: userData, flight: flightData });
     } catch (error) {
